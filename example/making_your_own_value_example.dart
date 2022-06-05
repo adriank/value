@@ -29,7 +29,7 @@ class UserName extends Value<UserNameValues<String>> {
   }
 }
 
-// UserNameValues is a freezed union that describe all possible states of UserName. The default one is a valid name. Other classes represent invalid names.
+// UserNameValues is a freezed union that describes all possible states of UserName. The default one is a valid name. Other classes represent invalid names.
 @freezed
 class UserNameValues<T> extends FreezedValue with _$UserNameValues<T> {
   const factory UserNameValues({required String userName}) = ValidUserName<T>;
@@ -55,7 +55,7 @@ void main() {
       userNameTooShort: (failedValue) => '$failedValue is too short',
     ));
 
-    // Converting UserName to JSON turns invalid values into exceptions which are more inline with behavior of the other tools. If name.toJson() is throwing anywhere in your code, it means you forgot to use exhaustive check to detect bug earlier. Exception is the last line of defense to block invalid states from being permanently stored.
+    // Converting UserName to JSON turns invalid values into exceptions which are more in line with the behavior of the other tools. If name.toJson() is throwing anywhere in your code, it means you forgot to use exhaustive check to detect bugs earlier. An exception is the last line of defense to block invalid states from being permanently stored.
     try {
       print(name.toJson());
     } on InvalidValueException catch (e) {

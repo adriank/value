@@ -31,7 +31,7 @@ abstract class Value<T extends FreezedValue> {
       );
 }
 
-// Freezed generates classes with no common name or superclass. FreezedValue provides a interface so that Value can use [maybeWhen] available in all Freezed objects.
+// Freezed generates classes with no common name or superclass. FreezedValue provides an interface so that Value can use [maybeWhen] available in all Freezed objects.
 abstract class FreezedValue<T> {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(T)? $default, {
