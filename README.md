@@ -1,39 +1,53 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+Value brings simple way of defining Value Objects in Dart. It uses power of Freezed package and its Union types.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+The main reason to use Value is to wrap simple types like String and number into meaningful types that can be easily validated.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+Using Value turns this code:
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+```dart
+  final emailAddress = 'me@example.com';
+  print(emailAddress.runtimeType); // String
+```
 
-## Features
+into:
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+```dart
+  final emailAddress = EmailAddress('me@example.com');
+  print(emailAddress.runtimeType); // String
+  print(emailAddress.isValid); // true
+  final otherEmailAddress = EmailAddress('example.com');
+  print(invalidEmailAddress().when(
+    (emailAddress) => 'Valid! $emailAddress',
+    invalidEmail: (invalidEmail) => 'Not valid! $invalidEmail',
+  )); // 'Not valid! example.com'
+```
+
+Some commonly used types are provided by the library:
+
+- EmailAddress
+- Url
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add to your pubspec.yaml:
+
+```yaml
+dependencies:
+  value:
+    git: https://github.com/adriank/value.git
+```
 
 ## Usage
 
 TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+to `/example` folder.
 
 ```dart
 const like = 'sample';
 ```
 
-## Additional information
+## Additional resources
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Read about making invalid state unrepresentable:
+[Making invalid state unrepresentable by Khalil Stemmler](https://khalilstemmler.com/articles/typescript-domain-driven-design/make-illegal-states-unrepresentable/)
+[Why we should use exhaustive checks by Nicholas Fahrenkrog](https://www.fullstory.com/blog/discriminated-unions-and-exhaustiveness-checking-in-typescript/)
