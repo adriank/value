@@ -1,28 +1,8 @@
 Value brings simple way of defining Value Objects in Dart. It uses power of Freezed package and its Union types.
 
-The main reason to use Value is to wrap simple types like String and number into meaningful types that can be easily validated.
+The main reason to use Value is to wrap simple types like `String` and `num` into meaningful types that can be easily validated.
 
-Using Value turns this code:
-
-```dart
-  final emailAddress = 'me@example.com';
-  print(emailAddress.runtimeType); // String
-```
-
-into:
-
-```dart
-  final emailAddress = EmailAddress('me@example.com');
-  print(emailAddress.runtimeType); // String
-  print(emailAddress.isValid); // true
-  final otherEmailAddress = EmailAddress('example.com');
-  print(invalidEmailAddress().when(
-    (emailAddress) => 'Valid! $emailAddress',
-    invalidEmail: (invalidEmail) => 'Not valid! $invalidEmail',
-  )); // 'Not valid! example.com'
-```
-
-Some commonly used types are provided by the library:
+Some commonly used value types are provided by the library:
 
 - EmailAddress
 - Url
@@ -39,11 +19,24 @@ dependencies:
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Using Value turns this code:
 
 ```dart
-const like = 'sample';
+  final emailAddress = 'me@example.com';
+  print(emailAddress.runtimeType); // String
+```
+
+into a meaningful `EmailAddress` type that can be validated:
+
+```dart
+  final emailAddress = EmailAddress('me@example.com');
+  print(emailAddress.runtimeType); // String
+  print(emailAddress.isValid); // true
+  final otherEmailAddress = EmailAddress('example.com');
+  print(invalidEmailAddress().when(
+    (emailAddress) => 'Valid! $emailAddress',
+    invalidEmail: (invalidEmail) => 'Not valid! $invalidEmail',
+  )); // 'Not valid! example.com'
 ```
 
 ## Additional resources
