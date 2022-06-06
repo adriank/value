@@ -39,6 +39,10 @@ into a meaningful `EmailAddress` type that can be validated:
   )); // 'Not valid! example.com'
 ```
 
+Check example directory to learn more:
+[Using embedded EmailAddress](https://github.com/adriank/value/blob/master/example/value_example.dart)
+[Creating your own Type](https://github.com/adriank/value/blob/master/example/making_your_own_value_example.dart)
+
 ## Additional resources
 
 Read about making invalid state unrepresentable:
