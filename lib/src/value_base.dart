@@ -11,12 +11,12 @@ abstract class Value<T extends FreezedValue> {
   T call() => _value;
 
   /// Avoid using valueOrThrow. Exceptionless code is just better. [valueOrThrow] is left for edge cases.
-  String get valueOrThrow => _value.maybeWhen(
+  T get valueOrThrow => _value.maybeWhen(
         (validValue) => validValue,
         orElse: () => throw InvalidValueException(_value),
       );
 
-  String toJson() => valueOrThrow;
+  String toJson() => valueOrThrow.toString();
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
