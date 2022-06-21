@@ -4,6 +4,7 @@ import '/value.dart';
 
 part 'url.freezed.dart';
 
+@immutable
 class Url extends Value<UrlValues<String>> {
   const Url._(value) : super(value);
 

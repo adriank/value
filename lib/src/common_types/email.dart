@@ -4,6 +4,7 @@ import '/value.dart';
 
 part 'email.freezed.dart';
 
+@immutable
 class EmailAddress extends Value<EmailAddressValues<String>> {
   const EmailAddress._(value) : super(value);
 

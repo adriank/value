@@ -1,3 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+@immutable
 abstract class Value<T extends FreezedValue> {
   const Value(this._value);
 
