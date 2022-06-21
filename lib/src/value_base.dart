@@ -19,7 +19,7 @@ abstract class Value<T extends FreezedValue> {
   String toJson() => valueOrThrow.toString();
 
   @override
-  bool operator ==(Object other) => other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
+  bool operator ==(Object other) => identical(this, other) || other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
 
   @override
   int get hashCode => _value.hashCode;
@@ -27,7 +27,7 @@ abstract class Value<T extends FreezedValue> {
   @override
   String toString() => _value.maybeWhen(
         (value) => value,
-        orElse: () => 'InvalidValue',
+        orElse: () => 'InvalidValue $_value',
       );
 }
 
