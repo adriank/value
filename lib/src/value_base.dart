@@ -4,7 +4,7 @@ abstract class Value<T extends FreezedValue> {
   final T _value;
 
   bool get isValid => _value.maybeWhen(
-        (email) => true,
+        (value) => true,
         orElse: () => false,
       );
 
@@ -19,7 +19,7 @@ abstract class Value<T extends FreezedValue> {
   String toJson() => valueOrThrow.toString();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
+  bool operator ==(Object other) => other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
 
   @override
   int get hashCode => _value.hashCode;
