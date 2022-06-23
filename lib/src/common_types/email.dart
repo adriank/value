@@ -5,8 +5,8 @@ import '/value.dart';
 part 'email.freezed.dart';
 
 @immutable
-class EmailAddress extends Value<EmailAddressValues<String>> {
-  const EmailAddress._(value) : super(value);
+class EmailAddress extends Value<EmailAddressValues<String>, String> {
+  const EmailAddress._(EmailAddressValues<String> value) : super(value);
 
   factory EmailAddress(String emailAddress) => EmailAddress._(_validator(emailAddress));
   factory EmailAddress.fromJson(String emailAddress) => EmailAddress(emailAddress);

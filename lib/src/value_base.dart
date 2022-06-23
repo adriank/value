@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 @immutable
-abstract class Value<T extends FreezedValue> {
+abstract class Value<T extends FreezedValue, DataType> {
   const Value(this._value);
 
   final T _value;
@@ -14,7 +14,7 @@ abstract class Value<T extends FreezedValue> {
   T call() => _value;
 
   /// Avoid using valueOrThrow. Exceptionless code is just better. [valueOrThrow] is left for edge cases.
-  T get valueOrThrow => _value.maybeWhen(
+  DataType get valueOrThrow => _value.maybeWhen(
         (validValue) => validValue,
         orElse: () => throw InvalidValueException(_value),
       );
@@ -22,7 +22,7 @@ abstract class Value<T extends FreezedValue> {
   String toJson() => valueOrThrow.toString();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Value<T> && other.runtimeType == runtimeType && valueOrThrow == other.valueOrThrow;
+  bool operator ==(Object other) => identical(this, other) || other is Value<T, DataType> && other.runtimeType == runtimeType && call() == other.call();
 
   @override
   int get hashCode => _value.hashCode;

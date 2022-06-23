@@ -5,8 +5,8 @@ import '/value.dart';
 part 'url.freezed.dart';
 
 @immutable
-class Url extends Value<UrlValues<String>> {
-  const Url._(value) : super(value);
+class Url extends Value<UrlValues<String>, String> {
+  const Url._(UrlValues<String> value) : super(value);
 
   factory Url(String url) => Url._(_validator(url));
   factory Url.fromJson(String url) => Url(url);

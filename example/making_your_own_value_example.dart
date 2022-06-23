@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'making_your_own_value_example.freezed.dart';
 
-class UserName extends Value<UserNameValues<String>> {
+class UserName extends Value<UserNameValues<String>, String> {
   const UserName._(value) : super(value);
 
   factory UserName(String emailAddress) => UserName._(_validator(emailAddress));
