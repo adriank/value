@@ -9,6 +9,7 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
   const EmailAddress._(EmailAddressValues<String> value) : super(value);
 
   factory EmailAddress(String emailAddress) => EmailAddress._(_validator(emailAddress));
+
   factory EmailAddress.fromJson(String emailAddress) => EmailAddress(emailAddress);
 
   static EmailAddressValues<String> _validator(String email) {
