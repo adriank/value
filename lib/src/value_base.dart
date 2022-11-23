@@ -29,7 +29,7 @@ abstract class Value<T extends FreezedValue, DataType> {
 
   @override
   String toString() => _value.maybeWhen(
-        (value) => value,
+        (value) => value.toString(),
         orElse: () => 'InvalidValue $_value',
       );
 }
