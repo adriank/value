@@ -19,20 +19,19 @@ mixin _$UrlValues<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String url) $default, {
-    required TResult Function(String failedValue, FormatException error)
-        invalidUrl,
+    required TResult Function(String failedValue) invalidUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,8 +137,7 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String url) $default, {
-    required TResult Function(String failedValue, FormatException error)
-        invalidUrl,
+    required TResult Function(String failedValue) invalidUrl,
   }) {
     return $default(url);
   }
@@ -148,7 +146,7 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
   }) {
     return $default?.call(url);
   }
@@ -157,7 +155,7 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -212,7 +210,7 @@ abstract class _$$InvalidUrlCopyWith<T, $Res> {
   factory _$$InvalidUrlCopyWith(
           _$InvalidUrl<T> value, $Res Function(_$InvalidUrl<T>) then) =
       __$$InvalidUrlCopyWithImpl<T, $Res>;
-  $Res call({String failedValue, FormatException error});
+  $Res call({String failedValue});
 }
 
 /// @nodoc
@@ -229,17 +227,12 @@ class __$$InvalidUrlCopyWithImpl<T, $Res>
   @override
   $Res call({
     Object? failedValue = freezed,
-    Object? error = freezed,
   }) {
     return _then(_$InvalidUrl<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as FormatException,
     ));
   }
 }
@@ -247,16 +240,14 @@ class __$$InvalidUrlCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$InvalidUrl<T> implements InvalidUrl<T> {
-  const _$InvalidUrl({required this.failedValue, required this.error});
+  const _$InvalidUrl({required this.failedValue});
 
   @override
   final String failedValue;
-  @override
-  final FormatException error;
 
   @override
   String toString() {
-    return 'UrlValues<$T>.invalidUrl(failedValue: $failedValue, error: $error)';
+    return 'UrlValues<$T>.invalidUrl(failedValue: $failedValue)';
   }
 
   @override
@@ -265,15 +256,12 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
         (other.runtimeType == runtimeType &&
             other is _$InvalidUrl<T> &&
             const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue) &&
-            const DeepCollectionEquality().equals(other.error, error));
+                .equals(other.failedValue, failedValue));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(failedValue),
-      const DeepCollectionEquality().hash(error));
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -284,30 +272,29 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(String url) $default, {
-    required TResult Function(String failedValue, FormatException error)
-        invalidUrl,
+    required TResult Function(String failedValue) invalidUrl,
   }) {
-    return invalidUrl(failedValue, error);
+    return invalidUrl(failedValue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
   }) {
-    return invalidUrl?.call(failedValue, error);
+    return invalidUrl?.call(failedValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(String url)? $default, {
-    TResult Function(String failedValue, FormatException error)? invalidUrl,
+    TResult Function(String failedValue)? invalidUrl,
     required TResult orElse(),
   }) {
     if (invalidUrl != null) {
-      return invalidUrl(failedValue, error);
+      return invalidUrl(failedValue);
     }
     return orElse();
   }
@@ -345,12 +332,10 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
 }
 
 abstract class InvalidUrl<T> implements UrlValues<T> {
-  const factory InvalidUrl(
-      {required final String failedValue,
-      required final FormatException error}) = _$InvalidUrl<T>;
+  const factory InvalidUrl({required final String failedValue}) =
+      _$InvalidUrl<T>;
 
   String get failedValue => throw _privateConstructorUsedError;
-  FormatException get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$InvalidUrlCopyWith<T, _$InvalidUrl<T>> get copyWith =>
       throw _privateConstructorUsedError;

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:validators/validators.dart' as validators;
 
 import '/value.dart';
 
@@ -12,16 +13,7 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
 
   factory EmailAddress.fromJson(String emailAddress) => EmailAddress(emailAddress);
 
-  static EmailAddressValues<String> _validator(String email) {
-    final emailRegex = RegExp(r'^[a-zA-Z0-9.a-zA-Z0-9.!#$%&"*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+');
-    return emailRegex.hasMatch(email)
-        ? EmailAddressValues(
-            email: email,
-          )
-        : EmailAddressValues.invalidEmail(
-            failedValue: email,
-          );
-  }
+  static EmailAddressValues<String> _validator(String email) => validators.isEmail(email) ? EmailAddressValues(email: email) : EmailAddressValues.invalidEmail(failedValue: email);
 }
 
 @freezed

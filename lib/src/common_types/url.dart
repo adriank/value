@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
+import 'package:validators/validators.dart' as validators;
 import '/value.dart';
 
 part 'url.freezed.dart';
@@ -11,18 +11,16 @@ class Url extends Value<UrlValues<String>, String> {
   factory Url(String url) => Url._(_validator(url));
   factory Url.fromJson(String url) => Url(url);
 
-  static UrlValues<String> _validator(String url) {
-    try {
-      Uri.parse(url);
-      return UrlValues(url: url);
-    } on FormatException catch (e) {
-      return UrlValues.invalidUrl(failedValue: url, error: e);
-    }
-  }
+  static UrlValues<String> _validator(String url) => validators.isURL(
+        url,
+        protocols: ['http', 'https'],
+      )
+          ? UrlValues(url: url)
+          : UrlValues.invalidUrl(failedValue: url);
 }
 
 @freezed
 class UrlValues<T> extends FreezedValue with _$UrlValues<T> {
   const factory UrlValues({required String url}) = ValidUrl<T>;
-  const factory UrlValues.invalidUrl({required String failedValue, required FormatException error}) = InvalidUrl<T>;
+  const factory UrlValues.invalidUrl({required String failedValue}) = InvalidUrl<T>;
 }

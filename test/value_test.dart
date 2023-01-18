@@ -12,6 +12,18 @@ void main() {
     });
   });
 
+  group('Url tests', () {
+    setUp(() {});
+    test('Validity tests', () {
+      expect(Url('example.com').isValid, true);
+      expect(Url('www.example.com').isValid, true);
+      expect(Url('http://www.example.com').isValid, true);
+      expect(Url('https://www.example.com').isValid, true);
+      expect(Url('https://www.example.com/aaa?aaa=aaa&bbb=bbb').isValid, true);
+      expect(Url('www,example.com/aaa?aaa=aaa&bbb=bbb').isValid, false);
+    });
+  });
+
   group('MacAddress tests', () {
     setUp(() {});
 
