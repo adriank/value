@@ -1,6 +1,6 @@
 name: value
 description: A simple take on DDD ValueObjects
-version: 0.0.5
+version: 0.0.6
 homepage: https://book.kalbarczyk.co
 
 environment:
