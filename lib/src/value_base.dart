@@ -21,6 +21,8 @@ abstract class Value<T extends FreezedValue, DataType> {
 
   String toJson() => valueOrThrow.toString();
 
+  factory Value.fromJson(dynamic value) => throw Error();
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is Value<T, DataType> && other.runtimeType == runtimeType && call() == other.call();
 
