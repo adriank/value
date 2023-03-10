@@ -23,6 +23,12 @@ abstract class Value<T extends FreezedValue, DataType> {
 
   factory Value.fromJson(dynamic value) => throw Error();
 
+  /// Flutter form field validator. If value is correct, return null. Otherwise return 'Error'.
+  String? validator() => _value.maybeWhen(
+        (_) => null,
+        orElse: () => 'Error',
+      );
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is Value<T, DataType> && other.runtimeType == runtimeType && call() == other.call();
 
