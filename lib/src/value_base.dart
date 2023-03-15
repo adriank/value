@@ -19,7 +19,8 @@ abstract class Value<T extends FreezedValue, DataType> {
         orElse: () => throw InvalidValueException(_value),
       );
 
-  String toJson() => valueOrThrow.toString();
+  /// Should be overridden to serialize to the right type.
+  dynamic toJson() => valueOrThrow.toString();
 
   factory Value.fromJson(dynamic value) => throw Error();
 
