@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'mac_address.dart';
 
@@ -12,7 +12,7 @@ part of 'mac_address.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MacAddressValues<T> {
@@ -24,8 +24,8 @@ mixin _$MacAddressValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String macAddress)? $default, {
-    TResult Function(String failedValue)? invalidMacAddress,
+    TResult? Function(String macAddress)? $default, {
+    TResult? Function(String failedValue)? invalidMacAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$MacAddressValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidMacAddress<T> value)? $default, {
-    TResult Function(InvalidMacAddress<T> value)? invalidMacAddress,
+    TResult? Function(ValidMacAddress<T> value)? $default, {
+    TResult? Function(InvalidMacAddress<T> value)? invalidMacAddress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,44 +60,44 @@ mixin _$MacAddressValues<T> {
 abstract class $MacAddressValuesCopyWith<T, $Res> {
   factory $MacAddressValuesCopyWith(
           MacAddressValues<T> value, $Res Function(MacAddressValues<T>) then) =
-      _$MacAddressValuesCopyWithImpl<T, $Res>;
+      _$MacAddressValuesCopyWithImpl<T, $Res, MacAddressValues<T>>;
 }
 
 /// @nodoc
-class _$MacAddressValuesCopyWithImpl<T, $Res>
+class _$MacAddressValuesCopyWithImpl<T, $Res, $Val extends MacAddressValues<T>>
     implements $MacAddressValuesCopyWith<T, $Res> {
   _$MacAddressValuesCopyWithImpl(this._value, this._then);
 
-  final MacAddressValues<T> _value;
   // ignore: unused_field
-  final $Res Function(MacAddressValues<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$ValidMacAddressCopyWith<T, $Res> {
-  factory _$$ValidMacAddressCopyWith(_$ValidMacAddress<T> value,
-          $Res Function(_$ValidMacAddress<T>) then) =
-      __$$ValidMacAddressCopyWithImpl<T, $Res>;
+abstract class _$$ValidMacAddressImplCopyWith<T, $Res> {
+  factory _$$ValidMacAddressImplCopyWith(_$ValidMacAddressImpl<T> value,
+          $Res Function(_$ValidMacAddressImpl<T>) then) =
+      __$$ValidMacAddressImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String macAddress});
 }
 
 /// @nodoc
-class __$$ValidMacAddressCopyWithImpl<T, $Res>
-    extends _$MacAddressValuesCopyWithImpl<T, $Res>
-    implements _$$ValidMacAddressCopyWith<T, $Res> {
-  __$$ValidMacAddressCopyWithImpl(
-      _$ValidMacAddress<T> _value, $Res Function(_$ValidMacAddress<T>) _then)
-      : super(_value, (v) => _then(v as _$ValidMacAddress<T>));
+class __$$ValidMacAddressImplCopyWithImpl<T, $Res>
+    extends _$MacAddressValuesCopyWithImpl<T, $Res, _$ValidMacAddressImpl<T>>
+    implements _$$ValidMacAddressImplCopyWith<T, $Res> {
+  __$$ValidMacAddressImplCopyWithImpl(_$ValidMacAddressImpl<T> _value,
+      $Res Function(_$ValidMacAddressImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$ValidMacAddress<T> get _value => super._value as _$ValidMacAddress<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? macAddress = freezed,
+    Object? macAddress = null,
   }) {
-    return _then(_$ValidMacAddress<T>(
-      macAddress: macAddress == freezed
+    return _then(_$ValidMacAddressImpl<T>(
+      macAddress: null == macAddress
           ? _value.macAddress
           : macAddress // ignore: cast_nullable_to_non_nullable
               as String,
@@ -107,8 +107,8 @@ class __$$ValidMacAddressCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ValidMacAddress<T> implements ValidMacAddress<T> {
-  const _$ValidMacAddress({required this.macAddress});
+class _$ValidMacAddressImpl<T> implements ValidMacAddress<T> {
+  const _$ValidMacAddressImpl({required this.macAddress});
 
   @override
   final String macAddress;
@@ -119,22 +119,22 @@ class _$ValidMacAddress<T> implements ValidMacAddress<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidMacAddress<T> &&
-            const DeepCollectionEquality()
-                .equals(other.macAddress, macAddress));
+            other is _$ValidMacAddressImpl<T> &&
+            (identical(other.macAddress, macAddress) ||
+                other.macAddress == macAddress));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(macAddress));
+  int get hashCode => Object.hash(runtimeType, macAddress);
 
   @JsonKey(ignore: true)
   @override
-  _$$ValidMacAddressCopyWith<T, _$ValidMacAddress<T>> get copyWith =>
-      __$$ValidMacAddressCopyWithImpl<T, _$ValidMacAddress<T>>(
+  @pragma('vm:prefer-inline')
+  _$$ValidMacAddressImplCopyWith<T, _$ValidMacAddressImpl<T>> get copyWith =>
+      __$$ValidMacAddressImplCopyWithImpl<T, _$ValidMacAddressImpl<T>>(
           this, _$identity);
 
   @override
@@ -149,8 +149,8 @@ class _$ValidMacAddress<T> implements ValidMacAddress<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String macAddress)? $default, {
-    TResult Function(String failedValue)? invalidMacAddress,
+    TResult? Function(String macAddress)? $default, {
+    TResult? Function(String failedValue)? invalidMacAddress,
   }) {
     return $default?.call(macAddress);
   }
@@ -180,8 +180,8 @@ class _$ValidMacAddress<T> implements ValidMacAddress<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidMacAddress<T> value)? $default, {
-    TResult Function(InvalidMacAddress<T> value)? invalidMacAddress,
+    TResult? Function(ValidMacAddress<T> value)? $default, {
+    TResult? Function(InvalidMacAddress<T> value)? invalidMacAddress,
   }) {
     return $default?.call(this);
   }
@@ -202,39 +202,38 @@ class _$ValidMacAddress<T> implements ValidMacAddress<T> {
 
 abstract class ValidMacAddress<T> implements MacAddressValues<T> {
   const factory ValidMacAddress({required final String macAddress}) =
-      _$ValidMacAddress<T>;
+      _$ValidMacAddressImpl<T>;
 
-  String get macAddress => throw _privateConstructorUsedError;
+  String get macAddress;
   @JsonKey(ignore: true)
-  _$$ValidMacAddressCopyWith<T, _$ValidMacAddress<T>> get copyWith =>
+  _$$ValidMacAddressImplCopyWith<T, _$ValidMacAddressImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidMacAddressCopyWith<T, $Res> {
-  factory _$$InvalidMacAddressCopyWith(_$InvalidMacAddress<T> value,
-          $Res Function(_$InvalidMacAddress<T>) then) =
-      __$$InvalidMacAddressCopyWithImpl<T, $Res>;
+abstract class _$$InvalidMacAddressImplCopyWith<T, $Res> {
+  factory _$$InvalidMacAddressImplCopyWith(_$InvalidMacAddressImpl<T> value,
+          $Res Function(_$InvalidMacAddressImpl<T>) then) =
+      __$$InvalidMacAddressImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$InvalidMacAddressCopyWithImpl<T, $Res>
-    extends _$MacAddressValuesCopyWithImpl<T, $Res>
-    implements _$$InvalidMacAddressCopyWith<T, $Res> {
-  __$$InvalidMacAddressCopyWithImpl(_$InvalidMacAddress<T> _value,
-      $Res Function(_$InvalidMacAddress<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidMacAddress<T>));
+class __$$InvalidMacAddressImplCopyWithImpl<T, $Res>
+    extends _$MacAddressValuesCopyWithImpl<T, $Res, _$InvalidMacAddressImpl<T>>
+    implements _$$InvalidMacAddressImplCopyWith<T, $Res> {
+  __$$InvalidMacAddressImplCopyWithImpl(_$InvalidMacAddressImpl<T> _value,
+      $Res Function(_$InvalidMacAddressImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$InvalidMacAddress<T> get _value => super._value as _$InvalidMacAddress<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$InvalidMacAddress<T>(
-      failedValue: failedValue == freezed
+    return _then(_$InvalidMacAddressImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -244,8 +243,8 @@ class __$$InvalidMacAddressCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InvalidMacAddress<T> implements InvalidMacAddress<T> {
-  const _$InvalidMacAddress({required this.failedValue});
+class _$InvalidMacAddressImpl<T> implements InvalidMacAddress<T> {
+  const _$InvalidMacAddressImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -256,23 +255,24 @@ class _$InvalidMacAddress<T> implements InvalidMacAddress<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InvalidMacAddress<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$InvalidMacAddressImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$InvalidMacAddressCopyWith<T, _$InvalidMacAddress<T>> get copyWith =>
-      __$$InvalidMacAddressCopyWithImpl<T, _$InvalidMacAddress<T>>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InvalidMacAddressImplCopyWith<T, _$InvalidMacAddressImpl<T>>
+      get copyWith =>
+          __$$InvalidMacAddressImplCopyWithImpl<T, _$InvalidMacAddressImpl<T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -286,8 +286,8 @@ class _$InvalidMacAddress<T> implements InvalidMacAddress<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String macAddress)? $default, {
-    TResult Function(String failedValue)? invalidMacAddress,
+    TResult? Function(String macAddress)? $default, {
+    TResult? Function(String failedValue)? invalidMacAddress,
   }) {
     return invalidMacAddress?.call(failedValue);
   }
@@ -317,8 +317,8 @@ class _$InvalidMacAddress<T> implements InvalidMacAddress<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidMacAddress<T> value)? $default, {
-    TResult Function(InvalidMacAddress<T> value)? invalidMacAddress,
+    TResult? Function(ValidMacAddress<T> value)? $default, {
+    TResult? Function(InvalidMacAddress<T> value)? invalidMacAddress,
   }) {
     return invalidMacAddress?.call(this);
   }
@@ -339,10 +339,10 @@ class _$InvalidMacAddress<T> implements InvalidMacAddress<T> {
 
 abstract class InvalidMacAddress<T> implements MacAddressValues<T> {
   const factory InvalidMacAddress({required final String failedValue}) =
-      _$InvalidMacAddress<T>;
+      _$InvalidMacAddressImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$InvalidMacAddressCopyWith<T, _$InvalidMacAddress<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InvalidMacAddressImplCopyWith<T, _$InvalidMacAddressImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

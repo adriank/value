@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'email.dart';
 
@@ -12,7 +12,7 @@ part of 'email.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$EmailAddressValues<T> {
@@ -24,8 +24,8 @@ mixin _$EmailAddressValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email)? $default, {
-    TResult Function(String failedValue)? invalidEmail,
+    TResult? Function(String email)? $default, {
+    TResult? Function(String failedValue)? invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,19 +38,19 @@ mixin _$EmailAddressValues<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value) $default, {
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidEmailAddress<T> value) invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValidEmailAddress<T> value)? $default, {
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,44 +60,46 @@ mixin _$EmailAddressValues<T> {
 abstract class $EmailAddressValuesCopyWith<T, $Res> {
   factory $EmailAddressValuesCopyWith(EmailAddressValues<T> value,
           $Res Function(EmailAddressValues<T>) then) =
-      _$EmailAddressValuesCopyWithImpl<T, $Res>;
+      _$EmailAddressValuesCopyWithImpl<T, $Res, EmailAddressValues<T>>;
 }
 
 /// @nodoc
-class _$EmailAddressValuesCopyWithImpl<T, $Res>
+class _$EmailAddressValuesCopyWithImpl<T, $Res,
+        $Val extends EmailAddressValues<T>>
     implements $EmailAddressValuesCopyWith<T, $Res> {
   _$EmailAddressValuesCopyWithImpl(this._value, this._then);
 
-  final EmailAddressValues<T> _value;
   // ignore: unused_field
-  final $Res Function(EmailAddressValues<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$ValidEmailAddressCopyWith<T, $Res> {
-  factory _$$ValidEmailAddressCopyWith(_$ValidEmailAddress<T> value,
-          $Res Function(_$ValidEmailAddress<T>) then) =
-      __$$ValidEmailAddressCopyWithImpl<T, $Res>;
+abstract class _$$ValidEmailAddressImplCopyWith<T, $Res> {
+  factory _$$ValidEmailAddressImplCopyWith(_$ValidEmailAddressImpl<T> value,
+          $Res Function(_$ValidEmailAddressImpl<T>) then) =
+      __$$ValidEmailAddressImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$ValidEmailAddressCopyWithImpl<T, $Res>
-    extends _$EmailAddressValuesCopyWithImpl<T, $Res>
-    implements _$$ValidEmailAddressCopyWith<T, $Res> {
-  __$$ValidEmailAddressCopyWithImpl(_$ValidEmailAddress<T> _value,
-      $Res Function(_$ValidEmailAddress<T>) _then)
-      : super(_value, (v) => _then(v as _$ValidEmailAddress<T>));
+class __$$ValidEmailAddressImplCopyWithImpl<T, $Res>
+    extends _$EmailAddressValuesCopyWithImpl<T, $Res,
+        _$ValidEmailAddressImpl<T>>
+    implements _$$ValidEmailAddressImplCopyWith<T, $Res> {
+  __$$ValidEmailAddressImplCopyWithImpl(_$ValidEmailAddressImpl<T> _value,
+      $Res Function(_$ValidEmailAddressImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$ValidEmailAddress<T> get _value => super._value as _$ValidEmailAddress<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$ValidEmailAddress<T>(
-      email: email == freezed
+    return _then(_$ValidEmailAddressImpl<T>(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -107,8 +109,8 @@ class __$$ValidEmailAddressCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
-  const _$ValidEmailAddress({required this.email});
+class _$ValidEmailAddressImpl<T> implements ValidEmailAddress<T> {
+  const _$ValidEmailAddressImpl({required this.email});
 
   @override
   final String email;
@@ -119,22 +121,23 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidEmailAddress<T> &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$ValidEmailAddressImpl<T> &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$ValidEmailAddressCopyWith<T, _$ValidEmailAddress<T>> get copyWith =>
-      __$$ValidEmailAddressCopyWithImpl<T, _$ValidEmailAddress<T>>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ValidEmailAddressImplCopyWith<T, _$ValidEmailAddressImpl<T>>
+      get copyWith =>
+          __$$ValidEmailAddressImplCopyWithImpl<T, _$ValidEmailAddressImpl<T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -148,8 +151,8 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email)? $default, {
-    TResult Function(String failedValue)? invalidEmail,
+    TResult? Function(String email)? $default, {
+    TResult? Function(String failedValue)? invalidEmail,
   }) {
     return $default?.call(email);
   }
@@ -171,7 +174,7 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value) $default, {
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidEmailAddress<T> value) invalidEmail,
   }) {
     return $default(this);
   }
@@ -179,8 +182,8 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValidEmailAddress<T> value)? $default, {
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmail,
   }) {
     return $default?.call(this);
   }
@@ -189,7 +192,7 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmail,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -201,39 +204,39 @@ class _$ValidEmailAddress<T> implements ValidEmailAddress<T> {
 
 abstract class ValidEmailAddress<T> implements EmailAddressValues<T> {
   const factory ValidEmailAddress({required final String email}) =
-      _$ValidEmailAddress<T>;
+      _$ValidEmailAddressImpl<T>;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
-  _$$ValidEmailAddressCopyWith<T, _$ValidEmailAddress<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ValidEmailAddressImplCopyWith<T, _$ValidEmailAddressImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidEmailCopyWith<T, $Res> {
-  factory _$$InvalidEmailCopyWith(
-          _$InvalidEmail<T> value, $Res Function(_$InvalidEmail<T>) then) =
-      __$$InvalidEmailCopyWithImpl<T, $Res>;
+abstract class _$$InvalidEmailAddressImplCopyWith<T, $Res> {
+  factory _$$InvalidEmailAddressImplCopyWith(_$InvalidEmailAddressImpl<T> value,
+          $Res Function(_$InvalidEmailAddressImpl<T>) then) =
+      __$$InvalidEmailAddressImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$InvalidEmailCopyWithImpl<T, $Res>
-    extends _$EmailAddressValuesCopyWithImpl<T, $Res>
-    implements _$$InvalidEmailCopyWith<T, $Res> {
-  __$$InvalidEmailCopyWithImpl(
-      _$InvalidEmail<T> _value, $Res Function(_$InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail<T>));
+class __$$InvalidEmailAddressImplCopyWithImpl<T, $Res>
+    extends _$EmailAddressValuesCopyWithImpl<T, $Res,
+        _$InvalidEmailAddressImpl<T>>
+    implements _$$InvalidEmailAddressImplCopyWith<T, $Res> {
+  __$$InvalidEmailAddressImplCopyWithImpl(_$InvalidEmailAddressImpl<T> _value,
+      $Res Function(_$InvalidEmailAddressImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$InvalidEmail<T> get _value => super._value as _$InvalidEmail<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$InvalidEmail<T>(
-      failedValue: failedValue == freezed
+    return _then(_$InvalidEmailAddressImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -243,8 +246,8 @@ class __$$InvalidEmailCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail({required this.failedValue});
+class _$InvalidEmailAddressImpl<T> implements InvalidEmailAddress<T> {
+  const _$InvalidEmailAddressImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -255,22 +258,23 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InvalidEmail<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$InvalidEmailAddressImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
-      __$$InvalidEmailCopyWithImpl<T, _$InvalidEmail<T>>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InvalidEmailAddressImplCopyWith<T, _$InvalidEmailAddressImpl<T>>
+      get copyWith => __$$InvalidEmailAddressImplCopyWithImpl<T,
+          _$InvalidEmailAddressImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -284,8 +288,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String email)? $default, {
-    TResult Function(String failedValue)? invalidEmail,
+    TResult? Function(String email)? $default, {
+    TResult? Function(String failedValue)? invalidEmail,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -307,7 +311,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value) $default, {
-    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(InvalidEmailAddress<T> value) invalidEmail,
   }) {
     return invalidEmail(this);
   }
@@ -315,8 +319,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ValidEmailAddress<T> value)? $default, {
+    TResult? Function(InvalidEmailAddress<T> value)? invalidEmail,
   }) {
     return invalidEmail?.call(this);
   }
@@ -325,7 +329,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(ValidEmailAddress<T> value)? $default, {
-    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmail,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -335,12 +339,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   }
 }
 
-abstract class InvalidEmail<T> implements EmailAddressValues<T> {
-  const factory InvalidEmail({required final String failedValue}) =
-      _$InvalidEmail<T>;
+abstract class InvalidEmailAddress<T> implements EmailAddressValues<T> {
+  const factory InvalidEmailAddress({required final String failedValue}) =
+      _$InvalidEmailAddressImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$InvalidEmailCopyWith<T, _$InvalidEmail<T>> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$InvalidEmailAddressImplCopyWith<T, _$InvalidEmailAddressImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

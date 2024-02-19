@@ -19,5 +19,5 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
 @freezed
 class EmailAddressValues<T> extends FreezedValue with _$EmailAddressValues<T> {
   const factory EmailAddressValues({required String email}) = ValidEmailAddress<T>;
-  const factory EmailAddressValues.invalidEmail({required String failedValue}) = InvalidEmail<T>;
+  const factory EmailAddressValues.invalidEmail({required String failedValue}) = InvalidEmailAddress<T>;
 }

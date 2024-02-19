@@ -28,8 +28,8 @@ void main() {
     print('Valid! ${invalidEmailAddress()}');
   }
   // **is** and **as** with invalid email needs casting to the InvalidEmail type.
-  if (invalidEmailAddress() is InvalidEmail) {
-    print('Not valid! ${(invalidEmailAddress() as InvalidEmail).failedValue}');
+  if (invalidEmailAddress() is InvalidEmailAddress) {
+    print('Not valid! ${(invalidEmailAddress() as InvalidEmailAddress).failedValue}');
   }
   // Freezed documentation discourages using **is** and **as** because they're not exhaustive. It means that IDE doesn't help us with covering all possible cases of EmailAddress.
 

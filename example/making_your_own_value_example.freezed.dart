@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'making_your_own_value_example.dart';
 
@@ -12,7 +12,7 @@ part of 'making_your_own_value_example.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserNameValues<T> {
@@ -26,10 +26,10 @@ mixin _$UserNameValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String userName)? $default, {
-    TResult Function(String failedValue)? userNameTooShort,
-    TResult Function(String failedValue)? userNameTooLong,
-    TResult Function(String failedValue)? userNameHasInvalidCharacters,
+    TResult? Function(String userName)? $default, {
+    TResult? Function(String failedValue)? userNameTooShort,
+    TResult? Function(String failedValue)? userNameTooLong,
+    TResult? Function(String failedValue)? userNameHasInvalidCharacters,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,10 +52,10 @@ mixin _$UserNameValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUserName<T> value)? $default, {
-    TResult Function(UserNameTooShort<T> value)? userNameTooShort,
-    TResult Function(UserNameTooLong<T> value)? userNameTooLong,
-    TResult Function(UserNameHasInvalidCharacters<T> value)?
+    TResult? Function(ValidUserName<T> value)? $default, {
+    TResult? Function(UserNameTooShort<T> value)? userNameTooShort,
+    TResult? Function(UserNameTooLong<T> value)? userNameTooLong,
+    TResult? Function(UserNameHasInvalidCharacters<T> value)?
         userNameHasInvalidCharacters,
   }) =>
       throw _privateConstructorUsedError;
@@ -75,44 +75,44 @@ mixin _$UserNameValues<T> {
 abstract class $UserNameValuesCopyWith<T, $Res> {
   factory $UserNameValuesCopyWith(
           UserNameValues<T> value, $Res Function(UserNameValues<T>) then) =
-      _$UserNameValuesCopyWithImpl<T, $Res>;
+      _$UserNameValuesCopyWithImpl<T, $Res, UserNameValues<T>>;
 }
 
 /// @nodoc
-class _$UserNameValuesCopyWithImpl<T, $Res>
+class _$UserNameValuesCopyWithImpl<T, $Res, $Val extends UserNameValues<T>>
     implements $UserNameValuesCopyWith<T, $Res> {
   _$UserNameValuesCopyWithImpl(this._value, this._then);
 
-  final UserNameValues<T> _value;
   // ignore: unused_field
-  final $Res Function(UserNameValues<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$ValidUserNameCopyWith<T, $Res> {
-  factory _$$ValidUserNameCopyWith(
-          _$ValidUserName<T> value, $Res Function(_$ValidUserName<T>) then) =
-      __$$ValidUserNameCopyWithImpl<T, $Res>;
+abstract class _$$ValidUserNameImplCopyWith<T, $Res> {
+  factory _$$ValidUserNameImplCopyWith(_$ValidUserNameImpl<T> value,
+          $Res Function(_$ValidUserNameImpl<T>) then) =
+      __$$ValidUserNameImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String userName});
 }
 
 /// @nodoc
-class __$$ValidUserNameCopyWithImpl<T, $Res>
-    extends _$UserNameValuesCopyWithImpl<T, $Res>
-    implements _$$ValidUserNameCopyWith<T, $Res> {
-  __$$ValidUserNameCopyWithImpl(
-      _$ValidUserName<T> _value, $Res Function(_$ValidUserName<T>) _then)
-      : super(_value, (v) => _then(v as _$ValidUserName<T>));
+class __$$ValidUserNameImplCopyWithImpl<T, $Res>
+    extends _$UserNameValuesCopyWithImpl<T, $Res, _$ValidUserNameImpl<T>>
+    implements _$$ValidUserNameImplCopyWith<T, $Res> {
+  __$$ValidUserNameImplCopyWithImpl(_$ValidUserNameImpl<T> _value,
+      $Res Function(_$ValidUserNameImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$ValidUserName<T> get _value => super._value as _$ValidUserName<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userName = freezed,
+    Object? userName = null,
   }) {
-    return _then(_$ValidUserName<T>(
-      userName: userName == freezed
+    return _then(_$ValidUserNameImpl<T>(
+      userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
@@ -122,8 +122,8 @@ class __$$ValidUserNameCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ValidUserName<T> implements ValidUserName<T> {
-  const _$ValidUserName({required this.userName});
+class _$ValidUserNameImpl<T> implements ValidUserName<T> {
+  const _$ValidUserNameImpl({required this.userName});
 
   @override
   final String userName;
@@ -134,21 +134,23 @@ class _$ValidUserName<T> implements ValidUserName<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidUserName<T> &&
-            const DeepCollectionEquality().equals(other.userName, userName));
+            other is _$ValidUserNameImpl<T> &&
+            (identical(other.userName, userName) ||
+                other.userName == userName));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(userName));
+  int get hashCode => Object.hash(runtimeType, userName);
 
   @JsonKey(ignore: true)
   @override
-  _$$ValidUserNameCopyWith<T, _$ValidUserName<T>> get copyWith =>
-      __$$ValidUserNameCopyWithImpl<T, _$ValidUserName<T>>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ValidUserNameImplCopyWith<T, _$ValidUserNameImpl<T>> get copyWith =>
+      __$$ValidUserNameImplCopyWithImpl<T, _$ValidUserNameImpl<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -164,10 +166,10 @@ class _$ValidUserName<T> implements ValidUserName<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String userName)? $default, {
-    TResult Function(String failedValue)? userNameTooShort,
-    TResult Function(String failedValue)? userNameTooLong,
-    TResult Function(String failedValue)? userNameHasInvalidCharacters,
+    TResult? Function(String userName)? $default, {
+    TResult? Function(String failedValue)? userNameTooShort,
+    TResult? Function(String failedValue)? userNameTooLong,
+    TResult? Function(String failedValue)? userNameHasInvalidCharacters,
   }) {
     return $default?.call(userName);
   }
@@ -202,10 +204,10 @@ class _$ValidUserName<T> implements ValidUserName<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUserName<T> value)? $default, {
-    TResult Function(UserNameTooShort<T> value)? userNameTooShort,
-    TResult Function(UserNameTooLong<T> value)? userNameTooLong,
-    TResult Function(UserNameHasInvalidCharacters<T> value)?
+    TResult? Function(ValidUserName<T> value)? $default, {
+    TResult? Function(UserNameTooShort<T> value)? userNameTooShort,
+    TResult? Function(UserNameTooLong<T> value)? userNameTooLong,
+    TResult? Function(UserNameHasInvalidCharacters<T> value)?
         userNameHasInvalidCharacters,
   }) {
     return $default?.call(this);
@@ -230,39 +232,38 @@ class _$ValidUserName<T> implements ValidUserName<T> {
 
 abstract class ValidUserName<T> implements UserNameValues<T> {
   const factory ValidUserName({required final String userName}) =
-      _$ValidUserName<T>;
+      _$ValidUserNameImpl<T>;
 
-  String get userName => throw _privateConstructorUsedError;
+  String get userName;
   @JsonKey(ignore: true)
-  _$$ValidUserNameCopyWith<T, _$ValidUserName<T>> get copyWith =>
+  _$$ValidUserNameImplCopyWith<T, _$ValidUserNameImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserNameTooShortCopyWith<T, $Res> {
-  factory _$$UserNameTooShortCopyWith(_$UserNameTooShort<T> value,
-          $Res Function(_$UserNameTooShort<T>) then) =
-      __$$UserNameTooShortCopyWithImpl<T, $Res>;
+abstract class _$$UserNameTooShortImplCopyWith<T, $Res> {
+  factory _$$UserNameTooShortImplCopyWith(_$UserNameTooShortImpl<T> value,
+          $Res Function(_$UserNameTooShortImpl<T>) then) =
+      __$$UserNameTooShortImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$UserNameTooShortCopyWithImpl<T, $Res>
-    extends _$UserNameValuesCopyWithImpl<T, $Res>
-    implements _$$UserNameTooShortCopyWith<T, $Res> {
-  __$$UserNameTooShortCopyWithImpl(
-      _$UserNameTooShort<T> _value, $Res Function(_$UserNameTooShort<T>) _then)
-      : super(_value, (v) => _then(v as _$UserNameTooShort<T>));
+class __$$UserNameTooShortImplCopyWithImpl<T, $Res>
+    extends _$UserNameValuesCopyWithImpl<T, $Res, _$UserNameTooShortImpl<T>>
+    implements _$$UserNameTooShortImplCopyWith<T, $Res> {
+  __$$UserNameTooShortImplCopyWithImpl(_$UserNameTooShortImpl<T> _value,
+      $Res Function(_$UserNameTooShortImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$UserNameTooShort<T> get _value => super._value as _$UserNameTooShort<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$UserNameTooShort<T>(
-      failedValue: failedValue == freezed
+    return _then(_$UserNameTooShortImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -272,8 +273,8 @@ class __$$UserNameTooShortCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$UserNameTooShort<T> implements UserNameTooShort<T> {
-  const _$UserNameTooShort({required this.failedValue});
+class _$UserNameTooShortImpl<T> implements UserNameTooShort<T> {
+  const _$UserNameTooShortImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -284,22 +285,22 @@ class _$UserNameTooShort<T> implements UserNameTooShort<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserNameTooShort<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$UserNameTooShortImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$UserNameTooShortCopyWith<T, _$UserNameTooShort<T>> get copyWith =>
-      __$$UserNameTooShortCopyWithImpl<T, _$UserNameTooShort<T>>(
+  @pragma('vm:prefer-inline')
+  _$$UserNameTooShortImplCopyWith<T, _$UserNameTooShortImpl<T>> get copyWith =>
+      __$$UserNameTooShortImplCopyWithImpl<T, _$UserNameTooShortImpl<T>>(
           this, _$identity);
 
   @override
@@ -316,10 +317,10 @@ class _$UserNameTooShort<T> implements UserNameTooShort<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String userName)? $default, {
-    TResult Function(String failedValue)? userNameTooShort,
-    TResult Function(String failedValue)? userNameTooLong,
-    TResult Function(String failedValue)? userNameHasInvalidCharacters,
+    TResult? Function(String userName)? $default, {
+    TResult? Function(String failedValue)? userNameTooShort,
+    TResult? Function(String failedValue)? userNameTooLong,
+    TResult? Function(String failedValue)? userNameHasInvalidCharacters,
   }) {
     return userNameTooShort?.call(failedValue);
   }
@@ -354,10 +355,10 @@ class _$UserNameTooShort<T> implements UserNameTooShort<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUserName<T> value)? $default, {
-    TResult Function(UserNameTooShort<T> value)? userNameTooShort,
-    TResult Function(UserNameTooLong<T> value)? userNameTooLong,
-    TResult Function(UserNameHasInvalidCharacters<T> value)?
+    TResult? Function(ValidUserName<T> value)? $default, {
+    TResult? Function(UserNameTooShort<T> value)? userNameTooShort,
+    TResult? Function(UserNameTooLong<T> value)? userNameTooLong,
+    TResult? Function(UserNameHasInvalidCharacters<T> value)?
         userNameHasInvalidCharacters,
   }) {
     return userNameTooShort?.call(this);
@@ -382,39 +383,38 @@ class _$UserNameTooShort<T> implements UserNameTooShort<T> {
 
 abstract class UserNameTooShort<T> implements UserNameValues<T> {
   const factory UserNameTooShort({required final String failedValue}) =
-      _$UserNameTooShort<T>;
+      _$UserNameTooShortImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$UserNameTooShortCopyWith<T, _$UserNameTooShort<T>> get copyWith =>
+  _$$UserNameTooShortImplCopyWith<T, _$UserNameTooShortImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserNameTooLongCopyWith<T, $Res> {
-  factory _$$UserNameTooLongCopyWith(_$UserNameTooLong<T> value,
-          $Res Function(_$UserNameTooLong<T>) then) =
-      __$$UserNameTooLongCopyWithImpl<T, $Res>;
+abstract class _$$UserNameTooLongImplCopyWith<T, $Res> {
+  factory _$$UserNameTooLongImplCopyWith(_$UserNameTooLongImpl<T> value,
+          $Res Function(_$UserNameTooLongImpl<T>) then) =
+      __$$UserNameTooLongImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$UserNameTooLongCopyWithImpl<T, $Res>
-    extends _$UserNameValuesCopyWithImpl<T, $Res>
-    implements _$$UserNameTooLongCopyWith<T, $Res> {
-  __$$UserNameTooLongCopyWithImpl(
-      _$UserNameTooLong<T> _value, $Res Function(_$UserNameTooLong<T>) _then)
-      : super(_value, (v) => _then(v as _$UserNameTooLong<T>));
+class __$$UserNameTooLongImplCopyWithImpl<T, $Res>
+    extends _$UserNameValuesCopyWithImpl<T, $Res, _$UserNameTooLongImpl<T>>
+    implements _$$UserNameTooLongImplCopyWith<T, $Res> {
+  __$$UserNameTooLongImplCopyWithImpl(_$UserNameTooLongImpl<T> _value,
+      $Res Function(_$UserNameTooLongImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$UserNameTooLong<T> get _value => super._value as _$UserNameTooLong<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$UserNameTooLong<T>(
-      failedValue: failedValue == freezed
+    return _then(_$UserNameTooLongImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -424,8 +424,8 @@ class __$$UserNameTooLongCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$UserNameTooLong<T> implements UserNameTooLong<T> {
-  const _$UserNameTooLong({required this.failedValue});
+class _$UserNameTooLongImpl<T> implements UserNameTooLong<T> {
+  const _$UserNameTooLongImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -436,22 +436,22 @@ class _$UserNameTooLong<T> implements UserNameTooLong<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserNameTooLong<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$UserNameTooLongImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$UserNameTooLongCopyWith<T, _$UserNameTooLong<T>> get copyWith =>
-      __$$UserNameTooLongCopyWithImpl<T, _$UserNameTooLong<T>>(
+  @pragma('vm:prefer-inline')
+  _$$UserNameTooLongImplCopyWith<T, _$UserNameTooLongImpl<T>> get copyWith =>
+      __$$UserNameTooLongImplCopyWithImpl<T, _$UserNameTooLongImpl<T>>(
           this, _$identity);
 
   @override
@@ -468,10 +468,10 @@ class _$UserNameTooLong<T> implements UserNameTooLong<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String userName)? $default, {
-    TResult Function(String failedValue)? userNameTooShort,
-    TResult Function(String failedValue)? userNameTooLong,
-    TResult Function(String failedValue)? userNameHasInvalidCharacters,
+    TResult? Function(String userName)? $default, {
+    TResult? Function(String failedValue)? userNameTooShort,
+    TResult? Function(String failedValue)? userNameTooLong,
+    TResult? Function(String failedValue)? userNameHasInvalidCharacters,
   }) {
     return userNameTooLong?.call(failedValue);
   }
@@ -506,10 +506,10 @@ class _$UserNameTooLong<T> implements UserNameTooLong<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUserName<T> value)? $default, {
-    TResult Function(UserNameTooShort<T> value)? userNameTooShort,
-    TResult Function(UserNameTooLong<T> value)? userNameTooLong,
-    TResult Function(UserNameHasInvalidCharacters<T> value)?
+    TResult? Function(ValidUserName<T> value)? $default, {
+    TResult? Function(UserNameTooShort<T> value)? userNameTooShort,
+    TResult? Function(UserNameTooLong<T> value)? userNameTooLong,
+    TResult? Function(UserNameHasInvalidCharacters<T> value)?
         userNameHasInvalidCharacters,
   }) {
     return userNameTooLong?.call(this);
@@ -534,42 +534,41 @@ class _$UserNameTooLong<T> implements UserNameTooLong<T> {
 
 abstract class UserNameTooLong<T> implements UserNameValues<T> {
   const factory UserNameTooLong({required final String failedValue}) =
-      _$UserNameTooLong<T>;
+      _$UserNameTooLongImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$UserNameTooLongCopyWith<T, _$UserNameTooLong<T>> get copyWith =>
+  _$$UserNameTooLongImplCopyWith<T, _$UserNameTooLongImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserNameHasInvalidCharactersCopyWith<T, $Res> {
-  factory _$$UserNameHasInvalidCharactersCopyWith(
-          _$UserNameHasInvalidCharacters<T> value,
-          $Res Function(_$UserNameHasInvalidCharacters<T>) then) =
-      __$$UserNameHasInvalidCharactersCopyWithImpl<T, $Res>;
+abstract class _$$UserNameHasInvalidCharactersImplCopyWith<T, $Res> {
+  factory _$$UserNameHasInvalidCharactersImplCopyWith(
+          _$UserNameHasInvalidCharactersImpl<T> value,
+          $Res Function(_$UserNameHasInvalidCharactersImpl<T>) then) =
+      __$$UserNameHasInvalidCharactersImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$UserNameHasInvalidCharactersCopyWithImpl<T, $Res>
-    extends _$UserNameValuesCopyWithImpl<T, $Res>
-    implements _$$UserNameHasInvalidCharactersCopyWith<T, $Res> {
-  __$$UserNameHasInvalidCharactersCopyWithImpl(
-      _$UserNameHasInvalidCharacters<T> _value,
-      $Res Function(_$UserNameHasInvalidCharacters<T>) _then)
-      : super(_value, (v) => _then(v as _$UserNameHasInvalidCharacters<T>));
+class __$$UserNameHasInvalidCharactersImplCopyWithImpl<T, $Res>
+    extends _$UserNameValuesCopyWithImpl<T, $Res,
+        _$UserNameHasInvalidCharactersImpl<T>>
+    implements _$$UserNameHasInvalidCharactersImplCopyWith<T, $Res> {
+  __$$UserNameHasInvalidCharactersImplCopyWithImpl(
+      _$UserNameHasInvalidCharactersImpl<T> _value,
+      $Res Function(_$UserNameHasInvalidCharactersImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$UserNameHasInvalidCharacters<T> get _value =>
-      super._value as _$UserNameHasInvalidCharacters<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$UserNameHasInvalidCharacters<T>(
-      failedValue: failedValue == freezed
+    return _then(_$UserNameHasInvalidCharactersImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -579,9 +578,9 @@ class __$$UserNameHasInvalidCharactersCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$UserNameHasInvalidCharacters<T>
+class _$UserNameHasInvalidCharactersImpl<T>
     implements UserNameHasInvalidCharacters<T> {
-  const _$UserNameHasInvalidCharacters({required this.failedValue});
+  const _$UserNameHasInvalidCharactersImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -592,23 +591,24 @@ class _$UserNameHasInvalidCharacters<T>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserNameHasInvalidCharacters<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$UserNameHasInvalidCharactersImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$UserNameHasInvalidCharactersCopyWith<T, _$UserNameHasInvalidCharacters<T>>
-      get copyWith => __$$UserNameHasInvalidCharactersCopyWithImpl<T,
-          _$UserNameHasInvalidCharacters<T>>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$UserNameHasInvalidCharactersImplCopyWith<T,
+          _$UserNameHasInvalidCharactersImpl<T>>
+      get copyWith => __$$UserNameHasInvalidCharactersImplCopyWithImpl<T,
+          _$UserNameHasInvalidCharactersImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -624,10 +624,10 @@ class _$UserNameHasInvalidCharacters<T>
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String userName)? $default, {
-    TResult Function(String failedValue)? userNameTooShort,
-    TResult Function(String failedValue)? userNameTooLong,
-    TResult Function(String failedValue)? userNameHasInvalidCharacters,
+    TResult? Function(String userName)? $default, {
+    TResult? Function(String failedValue)? userNameTooShort,
+    TResult? Function(String failedValue)? userNameTooLong,
+    TResult? Function(String failedValue)? userNameHasInvalidCharacters,
   }) {
     return userNameHasInvalidCharacters?.call(failedValue);
   }
@@ -662,10 +662,10 @@ class _$UserNameHasInvalidCharacters<T>
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUserName<T> value)? $default, {
-    TResult Function(UserNameTooShort<T> value)? userNameTooShort,
-    TResult Function(UserNameTooLong<T> value)? userNameTooLong,
-    TResult Function(UserNameHasInvalidCharacters<T> value)?
+    TResult? Function(ValidUserName<T> value)? $default, {
+    TResult? Function(UserNameTooShort<T> value)? userNameTooShort,
+    TResult? Function(UserNameTooLong<T> value)? userNameTooLong,
+    TResult? Function(UserNameHasInvalidCharacters<T> value)?
         userNameHasInvalidCharacters,
   }) {
     return userNameHasInvalidCharacters?.call(this);
@@ -690,10 +690,12 @@ class _$UserNameHasInvalidCharacters<T>
 
 abstract class UserNameHasInvalidCharacters<T> implements UserNameValues<T> {
   const factory UserNameHasInvalidCharacters(
-      {required final String failedValue}) = _$UserNameHasInvalidCharacters<T>;
+          {required final String failedValue}) =
+      _$UserNameHasInvalidCharactersImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$UserNameHasInvalidCharactersCopyWith<T, _$UserNameHasInvalidCharacters<T>>
+  _$$UserNameHasInvalidCharactersImplCopyWith<T,
+          _$UserNameHasInvalidCharactersImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

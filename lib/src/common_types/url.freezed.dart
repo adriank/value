@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'url.dart';
 
@@ -12,7 +12,7 @@ part of 'url.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UrlValues<T> {
@@ -24,8 +24,8 @@ mixin _$UrlValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String url)? $default, {
-    TResult Function(String failedValue)? invalidUrl,
+    TResult? Function(String url)? $default, {
+    TResult? Function(String failedValue)? invalidUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$UrlValues<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUrl<T> value)? $default, {
-    TResult Function(InvalidUrl<T> value)? invalidUrl,
+    TResult? Function(ValidUrl<T> value)? $default, {
+    TResult? Function(InvalidUrl<T> value)? invalidUrl,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,42 +60,44 @@ mixin _$UrlValues<T> {
 abstract class $UrlValuesCopyWith<T, $Res> {
   factory $UrlValuesCopyWith(
           UrlValues<T> value, $Res Function(UrlValues<T>) then) =
-      _$UrlValuesCopyWithImpl<T, $Res>;
+      _$UrlValuesCopyWithImpl<T, $Res, UrlValues<T>>;
 }
 
 /// @nodoc
-class _$UrlValuesCopyWithImpl<T, $Res> implements $UrlValuesCopyWith<T, $Res> {
+class _$UrlValuesCopyWithImpl<T, $Res, $Val extends UrlValues<T>>
+    implements $UrlValuesCopyWith<T, $Res> {
   _$UrlValuesCopyWithImpl(this._value, this._then);
 
-  final UrlValues<T> _value;
   // ignore: unused_field
-  final $Res Function(UrlValues<T>) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$ValidUrlCopyWith<T, $Res> {
-  factory _$$ValidUrlCopyWith(
-          _$ValidUrl<T> value, $Res Function(_$ValidUrl<T>) then) =
-      __$$ValidUrlCopyWithImpl<T, $Res>;
+abstract class _$$ValidUrlImplCopyWith<T, $Res> {
+  factory _$$ValidUrlImplCopyWith(
+          _$ValidUrlImpl<T> value, $Res Function(_$ValidUrlImpl<T>) then) =
+      __$$ValidUrlImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String url});
 }
 
 /// @nodoc
-class __$$ValidUrlCopyWithImpl<T, $Res> extends _$UrlValuesCopyWithImpl<T, $Res>
-    implements _$$ValidUrlCopyWith<T, $Res> {
-  __$$ValidUrlCopyWithImpl(
-      _$ValidUrl<T> _value, $Res Function(_$ValidUrl<T>) _then)
-      : super(_value, (v) => _then(v as _$ValidUrl<T>));
+class __$$ValidUrlImplCopyWithImpl<T, $Res>
+    extends _$UrlValuesCopyWithImpl<T, $Res, _$ValidUrlImpl<T>>
+    implements _$$ValidUrlImplCopyWith<T, $Res> {
+  __$$ValidUrlImplCopyWithImpl(
+      _$ValidUrlImpl<T> _value, $Res Function(_$ValidUrlImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$ValidUrl<T> get _value => super._value as _$ValidUrl<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? url = freezed,
+    Object? url = null,
   }) {
-    return _then(_$ValidUrl<T>(
-      url: url == freezed
+    return _then(_$ValidUrlImpl<T>(
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
@@ -105,8 +107,8 @@ class __$$ValidUrlCopyWithImpl<T, $Res> extends _$UrlValuesCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ValidUrl<T> implements ValidUrl<T> {
-  const _$ValidUrl({required this.url});
+class _$ValidUrlImpl<T> implements ValidUrl<T> {
+  const _$ValidUrlImpl({required this.url});
 
   @override
   final String url;
@@ -117,21 +119,21 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ValidUrl<T> &&
-            const DeepCollectionEquality().equals(other.url, url));
+            other is _$ValidUrlImpl<T> &&
+            (identical(other.url, url) || other.url == url));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+  int get hashCode => Object.hash(runtimeType, url);
 
   @JsonKey(ignore: true)
   @override
-  _$$ValidUrlCopyWith<T, _$ValidUrl<T>> get copyWith =>
-      __$$ValidUrlCopyWithImpl<T, _$ValidUrl<T>>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ValidUrlImplCopyWith<T, _$ValidUrlImpl<T>> get copyWith =>
+      __$$ValidUrlImplCopyWithImpl<T, _$ValidUrlImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -145,8 +147,8 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String url)? $default, {
-    TResult Function(String failedValue)? invalidUrl,
+    TResult? Function(String url)? $default, {
+    TResult? Function(String failedValue)? invalidUrl,
   }) {
     return $default?.call(url);
   }
@@ -176,8 +178,8 @@ class _$ValidUrl<T> implements ValidUrl<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUrl<T> value)? $default, {
-    TResult Function(InvalidUrl<T> value)? invalidUrl,
+    TResult? Function(ValidUrl<T> value)? $default, {
+    TResult? Function(InvalidUrl<T> value)? invalidUrl,
   }) {
     return $default?.call(this);
   }
@@ -197,39 +199,38 @@ class _$ValidUrl<T> implements ValidUrl<T> {
 }
 
 abstract class ValidUrl<T> implements UrlValues<T> {
-  const factory ValidUrl({required final String url}) = _$ValidUrl<T>;
+  const factory ValidUrl({required final String url}) = _$ValidUrlImpl<T>;
 
-  String get url => throw _privateConstructorUsedError;
+  String get url;
   @JsonKey(ignore: true)
-  _$$ValidUrlCopyWith<T, _$ValidUrl<T>> get copyWith =>
+  _$$ValidUrlImplCopyWith<T, _$ValidUrlImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$InvalidUrlCopyWith<T, $Res> {
-  factory _$$InvalidUrlCopyWith(
-          _$InvalidUrl<T> value, $Res Function(_$InvalidUrl<T>) then) =
-      __$$InvalidUrlCopyWithImpl<T, $Res>;
+abstract class _$$InvalidUrlImplCopyWith<T, $Res> {
+  factory _$$InvalidUrlImplCopyWith(
+          _$InvalidUrlImpl<T> value, $Res Function(_$InvalidUrlImpl<T>) then) =
+      __$$InvalidUrlImplCopyWithImpl<T, $Res>;
+  @useResult
   $Res call({String failedValue});
 }
 
 /// @nodoc
-class __$$InvalidUrlCopyWithImpl<T, $Res>
-    extends _$UrlValuesCopyWithImpl<T, $Res>
-    implements _$$InvalidUrlCopyWith<T, $Res> {
-  __$$InvalidUrlCopyWithImpl(
-      _$InvalidUrl<T> _value, $Res Function(_$InvalidUrl<T>) _then)
-      : super(_value, (v) => _then(v as _$InvalidUrl<T>));
+class __$$InvalidUrlImplCopyWithImpl<T, $Res>
+    extends _$UrlValuesCopyWithImpl<T, $Res, _$InvalidUrlImpl<T>>
+    implements _$$InvalidUrlImplCopyWith<T, $Res> {
+  __$$InvalidUrlImplCopyWithImpl(
+      _$InvalidUrlImpl<T> _value, $Res Function(_$InvalidUrlImpl<T>) _then)
+      : super(_value, _then);
 
-  @override
-  _$InvalidUrl<T> get _value => super._value as _$InvalidUrl<T>;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? failedValue = null,
   }) {
-    return _then(_$InvalidUrl<T>(
-      failedValue: failedValue == freezed
+    return _then(_$InvalidUrlImpl<T>(
+      failedValue: null == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -239,8 +240,8 @@ class __$$InvalidUrlCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InvalidUrl<T> implements InvalidUrl<T> {
-  const _$InvalidUrl({required this.failedValue});
+class _$InvalidUrlImpl<T> implements InvalidUrl<T> {
+  const _$InvalidUrlImpl({required this.failedValue});
 
   @override
   final String failedValue;
@@ -251,22 +252,22 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InvalidUrl<T> &&
-            const DeepCollectionEquality()
-                .equals(other.failedValue, failedValue));
+            other is _$InvalidUrlImpl<T> &&
+            (identical(other.failedValue, failedValue) ||
+                other.failedValue == failedValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(failedValue));
+  int get hashCode => Object.hash(runtimeType, failedValue);
 
   @JsonKey(ignore: true)
   @override
-  _$$InvalidUrlCopyWith<T, _$InvalidUrl<T>> get copyWith =>
-      __$$InvalidUrlCopyWithImpl<T, _$InvalidUrl<T>>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InvalidUrlImplCopyWith<T, _$InvalidUrlImpl<T>> get copyWith =>
+      __$$InvalidUrlImplCopyWithImpl<T, _$InvalidUrlImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -280,8 +281,8 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(String url)? $default, {
-    TResult Function(String failedValue)? invalidUrl,
+    TResult? Function(String url)? $default, {
+    TResult? Function(String failedValue)? invalidUrl,
   }) {
     return invalidUrl?.call(failedValue);
   }
@@ -311,8 +312,8 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(ValidUrl<T> value)? $default, {
-    TResult Function(InvalidUrl<T> value)? invalidUrl,
+    TResult? Function(ValidUrl<T> value)? $default, {
+    TResult? Function(InvalidUrl<T> value)? invalidUrl,
   }) {
     return invalidUrl?.call(this);
   }
@@ -333,10 +334,10 @@ class _$InvalidUrl<T> implements InvalidUrl<T> {
 
 abstract class InvalidUrl<T> implements UrlValues<T> {
   const factory InvalidUrl({required final String failedValue}) =
-      _$InvalidUrl<T>;
+      _$InvalidUrlImpl<T>;
 
-  String get failedValue => throw _privateConstructorUsedError;
+  String get failedValue;
   @JsonKey(ignore: true)
-  _$$InvalidUrlCopyWith<T, _$InvalidUrl<T>> get copyWith =>
+  _$$InvalidUrlImplCopyWith<T, _$InvalidUrlImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
