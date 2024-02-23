@@ -11,6 +11,12 @@ class CreditCard extends Value<CreditCardValues<String>, String> {
   factory CreditCard(String number) => CreditCard._(_validator(number));
   factory CreditCard.fromJson(String number) => CreditCard(number);
 
+  @override
+  String? validator() => call().when(
+        (String email) => null,
+        invalidCreditCard: (String failedValue) => 'invalidCreditCard',
+      );
+
   static CreditCardValues<String> _validator(String number) => validators.isCreditCard(number) ? CreditCardValues(number: number) : CreditCardValues.invalidCreditCard(failedValue: number);
 }
 

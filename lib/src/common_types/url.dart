@@ -11,6 +11,12 @@ class Url extends Value<UrlValues<String>, String> {
   factory Url(String url) => Url._(_validator(url));
   factory Url.fromJson(String url) => Url(url);
 
+  @override
+  String? validator() => call().when(
+        (String email) => null,
+        invalidUrl: (String failedValue) => 'invalidUrl',
+      );
+
   static UrlValues<String> _validator(String url) => validators.isURL(
         url,
         protocols: ['http', 'https'],

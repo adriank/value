@@ -7,13 +7,22 @@ part 'email.freezed.dart';
 
 @immutable
 class EmailAddress extends Value<EmailAddressValues<String>, String> {
-  const EmailAddress._(EmailAddressValues<String> value) : super(value);
+  const EmailAddress._(super.value);
 
   factory EmailAddress(String emailAddress) => EmailAddress._(_validator(emailAddress));
 
   factory EmailAddress.fromJson(String emailAddress) => EmailAddress(emailAddress);
 
-  static EmailAddressValues<String> _validator(String email) => validators.isEmail(email) ? EmailAddressValues(email: email) : EmailAddressValues.invalidEmail(failedValue: email);
+  @override
+  String? validator() => call().when(
+        (String email) => null,
+        invalidEmail: (String failedValue) => 'auth_invalidEmail',
+      );
+
+  static EmailAddressValues<String> _validator(String email) => switch (validators.isEmail(email)) {
+        true => EmailAddressValues(email: email),
+        false => EmailAddressValues.invalidEmail(failedValue: email),
+      };
 }
 
 @freezed

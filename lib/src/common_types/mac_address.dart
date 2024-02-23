@@ -15,6 +15,12 @@ class MacAddress extends Value<MacAddressValues<String>, String> {
         orElse: () => call(),
       );
 
+  @override
+  String? validator() => call().when(
+        (String email) => null,
+        invalidMacAddress: (String failedValue) => 'invalidMacAddress',
+      );
+
   static MacAddressValues<String> _validator(String macAddress) {
     if (macAddress.contains(':')) {
       macAddress = macAddress.replaceAll(':', '');
