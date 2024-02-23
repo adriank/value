@@ -16,7 +16,7 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
   @override
   String? validator() => call().when(
         (String email) => null,
-        invalidEmail: (String failedValue) => 'auth_invalidEmail',
+        invalidEmail: (String failedValue) => 'invalidEmail',
       );
 
   static EmailAddressValues<String> _validator(String email) => switch (validators.isEmail(email)) {
