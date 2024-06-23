@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:validators/validators.dart' as validators;
+
 import '/value.dart';
 
 part 'url.freezed.dart';
@@ -12,9 +13,9 @@ class Url extends Value<UrlValues<String>, String> {
   factory Url.fromJson(String url) => Url(url);
 
   @override
-  String? validator() => call().when(
+  UrlErrors? validator() => call().when(
         (String email) => null,
-        invalidUrl: (String failedValue) => 'invalidUrl',
+        invalidUrl: (String failedValue) => UrlErrors.invalidUrl,
       );
 
   static UrlValues<String> _validator(String url) => validators.isURL(
@@ -24,6 +25,8 @@ class Url extends Value<UrlValues<String>, String> {
           ? UrlValues(url: url)
           : UrlValues.invalidUrl(failedValue: url);
 }
+
+enum UrlErrors { invalidUrl }
 
 @freezed
 class UrlValues<T> extends FreezedValue with _$UrlValues<T> {

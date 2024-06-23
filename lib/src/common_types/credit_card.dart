@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:validators/validators.dart' as validators;
+
 import '/value.dart';
 
 part 'credit_card.freezed.dart';
@@ -12,12 +13,16 @@ class CreditCard extends Value<CreditCardValues<String>, String> {
   factory CreditCard.fromJson(String number) => CreditCard(number);
 
   @override
-  String? validator() => call().when(
+  CreditCardErrors? validator() => call().when(
         (String email) => null,
-        invalidCreditCard: (String failedValue) => 'invalidCreditCard',
+        invalidCreditCard: (String failedValue) => CreditCardErrors.invalidCreditCardNumber,
       );
 
   static CreditCardValues<String> _validator(String number) => validators.isCreditCard(number) ? CreditCardValues(number: number) : CreditCardValues.invalidCreditCard(failedValue: number);
+}
+
+enum CreditCardErrors {
+  invalidCreditCardNumber,
 }
 
 @freezed

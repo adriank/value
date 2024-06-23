@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:value/value.dart';
 
 part 'mac_address.freezed.dart';
@@ -16,9 +17,9 @@ class MacAddress extends Value<MacAddressValues<String>, String> {
       );
 
   @override
-  String? validator() => call().when(
+  MacAddressErrors? validator() => call().when(
         (String email) => null,
-        invalidMacAddress: (String failedValue) => 'invalidMacAddress',
+        invalidMacAddress: (String failedValue) => MacAddressErrors.invalidMacAddress,
       );
 
   static MacAddressValues<String> _validator(String macAddress) {
@@ -38,6 +39,10 @@ class MacAddress extends Value<MacAddressValues<String>, String> {
             failedValue: macAddress,
           );
   }
+}
+
+enum MacAddressErrors {
+  invalidMacAddress,
 }
 
 @freezed
