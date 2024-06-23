@@ -14,9 +14,9 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
   factory EmailAddress.fromJson(String emailAddress) => EmailAddress(emailAddress);
 
   @override
-  EmailErrors? validator() => call().when(
+  EmailAddressErrors? validator() => call().when(
         (String email) => null,
-        invalidEmail: (String failedValue) => EmailErrors.invalidEmail,
+        invalidEmail: (String failedValue) => EmailAddressErrors.invalidEmail,
       );
 
   static EmailAddressValues<String> _validator(String email) => switch (validators.isEmail(email)) {
@@ -25,7 +25,7 @@ class EmailAddress extends Value<EmailAddressValues<String>, String> {
       };
 }
 
-enum EmailErrors {
+enum EmailAddressErrors {
   invalidEmail,
 }
 
