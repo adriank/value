@@ -1,18 +1,14 @@
 name: value
 description: A simple take on DDD ValueObjects
 version: 0.0.12
-homepage: https://book.kalbarczyk.co
+homepage: https://github.com/adriank/value
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  freezed_annotation: ^2.2.0
   validators: ^3.0.0
 
 dev_dependencies:
-  lints: ^3.0.0
+  lints: ^5.1.1
   test: ^1.24.3
-  freezed: ^2.3.4
-  build_runner: ^2.4.4
-  json_serializable: ^6.7.0

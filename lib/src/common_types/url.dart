@@ -1,35 +1,37 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:validators/validators.dart' as validators;
 
 import '/value.dart';
 
-part 'url.freezed.dart';
-
-@immutable
 class Url extends Value<UrlValues<String>, String> {
-  const Url._(UrlValues<String> value) : super(value);
+  const Url._(super.value);
 
   factory Url(String url) => Url._(_validator(url));
   factory Url.fromJson(String url) => Url(url);
 
   @override
-  UrlErrors? validator() => call().when(
-        (String email) => null,
-        invalidUrl: (String failedValue) => UrlErrors.invalidUrl,
-      );
+  UrlErrors? validator() => switch (call()) {
+        ValidUrl() => null,
+        _ => UrlErrors.invalidUrl,
+      };
 
   static UrlValues<String> _validator(String url) => validators.isURL(
         url,
         protocols: ['http', 'https'],
       )
-          ? UrlValues(url: url)
-          : UrlValues.invalidUrl(failedValue: url);
+          ? ValidUrl(url)
+          : InvalidUrl(url);
 }
 
 enum UrlErrors { invalidUrl }
 
-@freezed
-class UrlValues<T> extends FreezedValue with _$UrlValues<T> {
-  const factory UrlValues({required String url}) = ValidUrl<T>;
-  const factory UrlValues.invalidUrl({required String failedValue}) = InvalidUrl<T>;
+sealed class UrlValues<T> extends ValueObject<String> {
+  const UrlValues();
+}
+
+class ValidUrl<T> extends ValidValue<String> implements UrlValues<T> {
+  const ValidUrl(super.value);
+}
+
+class InvalidUrl<T> extends InvalidValue<String> implements UrlValues<T> {
+  const InvalidUrl(super.failedValue);
 }
