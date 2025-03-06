@@ -11,7 +11,7 @@ class Url extends Value<UrlValues<String>, String> {
   @override
   UrlErrors? validator() => switch (call()) {
         ValidUrl() => null,
-        _ => UrlErrors.invalidUrl,
+        InvalidUrl() => UrlErrors.invalidUrl,
       };
 
   static UrlValues<String> _validator(String url) => validators.isURL(

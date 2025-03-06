@@ -2,7 +2,7 @@ import 'package:value/value.dart';
 
 /// Mac address in a form of AABBCCDDEEFF. The AA:BB:CC:DD:EE:FF or AA-BB-CC-DD-EE-FF forms are also accepted.
 class MacAddress extends Value<MacAddressValues<String>, String> {
-  const MacAddress._(value) : super(value);
+  const MacAddress._(super.value);
 
   factory MacAddress(String macAddress) => MacAddress._(_validator(macAddress));
   factory MacAddress.fromJson(String macAddress) => MacAddress(macAddress);

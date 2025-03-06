@@ -74,7 +74,7 @@ class ValidValue<T> extends ValueObject<T> {
 
 class InvalidValue<T> extends ValueObject<T> {
   const InvalidValue(this.failedValue);
-  final T failedValue;
+  final dynamic failedValue;
 }
 
 /// Value is neither ValidValue, nor InvalidValue

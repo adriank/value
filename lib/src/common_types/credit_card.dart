@@ -3,7 +3,7 @@ import 'package:validators/validators.dart' as validators;
 import '/value.dart';
 
 class CreditCard extends Value<CreditCardValues<String>, String> {
-  const CreditCard._(CreditCardValues<String> value) : super(value);
+  const CreditCard._(super.value);
 
   factory CreditCard(String number) => CreditCard._(_validator(number));
   factory CreditCard.fromJson(String number) => CreditCard(number);
