@@ -64,7 +64,11 @@ class ValueObject<T> {
           };
 
   @override
-  int get hashCode => this.hashCode;
+  int get hashCode => switch (this) {
+        ValidValue(:final value) => value.hashCode,
+        InvalidValue(:final failedValue) => failedValue.hashCode,
+        _ => 0,
+      };
 }
 
 class ValidValue<T> extends ValueObject<T> {
